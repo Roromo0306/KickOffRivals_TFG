@@ -18,5 +18,6 @@ public class GameBootstrapper : MonoBehaviour
         homeView.Bind(homeViewModel);
 
         Debug.Log("Kick Off Rivals inicializado");
+
     }
 }
