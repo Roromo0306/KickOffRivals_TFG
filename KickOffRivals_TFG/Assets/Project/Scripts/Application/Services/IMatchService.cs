@@ -5,7 +5,7 @@ namespace KickOffRivals.Application.Services
     public interface IMatchService
     {
         MatchModel CurrentMatch {  get; }
-        MatchModel LastResult { get; }
+        MatchResult LastResult { get; }
 
         void StartMatch();
         void FinishMatch();

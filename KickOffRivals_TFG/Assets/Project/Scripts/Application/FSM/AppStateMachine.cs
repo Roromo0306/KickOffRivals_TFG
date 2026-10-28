@@ -1,5 +1,5 @@
+
 using System;
-using Unity.VisualScripting;
 
 namespace KickOffRivals.Application.FSM
 {
@@ -15,10 +15,20 @@ namespace KickOffRivals.Application.FSM
             {
                 case AppState.Boot:
                     return next == AppState.Home;
+
                 case AppState.Home:
                     return next == AppState.Loading;
+
                 case AppState.Loading:
-                    return next == AppState.Match || next == AppState.Home;
+                    return next == AppState.Match ||
+                           next == AppState.Home;
+
+                case AppState.Match:
+                    return next == AppState.Results;
+
+                case AppState.Results:
+                    return next == AppState.Home;
+
                 default:
                     return false;
             }
@@ -27,9 +37,7 @@ namespace KickOffRivals.Application.FSM
         public bool TryChangeState(AppState next)
         {
             if (!CanTransitionTo(next))
-            {
                 return false;
-            }
 
             Current = next;
             StateChanged?.Invoke(next);

@@ -1,3 +1,4 @@
+
 using System;
 using KickOffRivals.Application.FSM;
 using KickOffRivals.Application.Ports;
@@ -15,7 +16,9 @@ namespace KickOffRivals.Application.Services
         public NavigationService(AppStateMachine stateMachine, ISceneLoader sceneLoader, IMatchService matchService)
         {
             _stateMachine = stateMachine ?? throw new ArgumentNullException(nameof(stateMachine));
+
             _sceneLoader = sceneLoader ?? throw new ArgumentNullException(nameof(sceneLoader));
+
             _matchService = matchService ?? throw new ArgumentNullException(nameof(matchService));
         }
 
@@ -35,6 +38,9 @@ namespace KickOffRivals.Application.Services
             {
                 return false;
             }
+              
+
+            _matchService.StartMatch();
 
             return TransitionAndLoad(AppState.Match, "Match");
         }
@@ -45,6 +51,9 @@ namespace KickOffRivals.Application.Services
             {
                 return false;
             }
+               
+
+            _matchService.FinishMatch();
 
             return TransitionAndLoad(AppState.Results, "Results");
         }
@@ -57,6 +66,7 @@ namespace KickOffRivals.Application.Services
             }
 
             _sceneLoader.Load(sceneName);
+
             return true;
         }
     }

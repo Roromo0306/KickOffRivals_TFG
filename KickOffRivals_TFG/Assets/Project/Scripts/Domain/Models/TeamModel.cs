@@ -42,7 +42,7 @@ namespace KickOffRivals.Domain.Models
                 }
             }
 
-            side = Side;
+            Side = side;
             Players = copy.AsReadOnly();
         }
     }
