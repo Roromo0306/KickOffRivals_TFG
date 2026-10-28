@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/Bootstrap.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Project/Scenes/Home.unity
+    guid: e102219654f21ee4b8ef158f57039f10
+  - enabled: 1
+    path: Assets/Project/Scenes/Loading.unity
+    guid: a2f80a2a53ce1f14d952b049fd0f8d28
+  - enabled: 1
+    path: Assets/Project/Scenes/Match.unity
+    guid: 4e7d6ec8edd83eb438dd061d1980c28c
+  - enabled: 1
+    path: Assets/Project/Scenes/Results.unity
+    guid: ea1fb3e7c62d72244a961eaf7dca5b49
   m_configObjects: {}
